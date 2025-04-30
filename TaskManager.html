@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <!--webpage title-->
+        <title>Task Manager</title>
+        <!--style blocks for webpage-->
+        <style>
+           
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+
+            .formStyle{
+                display: flex; 
+                justify-content: center;
+            }
+
+            form {
+                display: flex; 
+                flex-direction: column;
+                align-items: center;
+                font-family: Arial, sans-serif;
+                margin-bottom: 20px;
+                width: 400px;
+                border: 3px solid black;
+                padding: 10px; 
+                background-color: lightblue;
+            }
+        
+            .important {
+                font-family: Arial, sans-serif;
+                border: gray; 
+                color: black; 
+                background-color: #AA336A;
+                padding: 15px 32px;
+                text-align: center;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+
+            .button {
+                font-family: Arial, sans-serif;
+                border: gray;
+                color: black;
+                background-color: #f281cd;
+                padding: 15px 32px;
+                text-align: center;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+
+        </style>
+        <!--get the JS file-->
+        <script src="taskmanager.js" defer></script>
+    </head>
+    <body>
+        <h1 style="text-align: center">Task Manager</h1><br>
+
+        <div class="formStyle">
+        <!--create form-->
+        <!-- when submitted run JS function that adds all form info to the array -->
+            <form id="taskForm">
+        
+            <!--text box for entering task-->
+
+            <label for="task">Task Name: </label>
+            <input type="text" id="task" name="task" required>
+
+            <!--dropdown box to pick priority of task-->
+
+            <label for="priority">Priority Level: </label>
+            <select id="priority" name="priority">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+
+            <!--checkbox for if task is important-->
+            <!-- true or false if task is important or not -->
+            <label for="isImportant" name>Check for Important</label>
+            <input type="checkbox" class="important" id="isImportant">
+            
+
+            <!--'add task' button that adds task to the displayed list-->
+            <!-- appends tasks object properties to the list and updates display -->
+            <button class="button" type="submit">Add Task</button>
+
+            </form>
+        </div>
+        <!--create div with id of task manager to dynamically display tasks-->
+        <div id="taskManager"></div>
+
+    </body>
+</html>
